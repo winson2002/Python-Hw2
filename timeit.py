@@ -3,8 +3,8 @@ import time
 def calculate_time(func):
 	def wrapper():
 		start = time.time()
-		func()
+		stored = func()
 		end = time.time()
-		total = end - start
-		return f"Total time {total}"
+		print(f'Total time {end - start}')
+		return stored
 	return wrapper
