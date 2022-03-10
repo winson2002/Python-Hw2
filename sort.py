@@ -1,4 +1,4 @@
-	def sort_list(list):
+def sort_list(list):
 	n = len(list)
 	i = 0
 	while (i < n):
