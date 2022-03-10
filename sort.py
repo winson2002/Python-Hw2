@@ -5,7 +5,7 @@ def sort_list(list):
 		j = n-i-1
 		while (j < n):
 			if (list[i] > list[j]):
-				a[i],a[j] = a[j],a[i]
+				list[i],list[j] = list[j],list[i]
 			j+=1
 		i+=1
 	return(list)
