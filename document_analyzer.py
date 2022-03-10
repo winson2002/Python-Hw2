@@ -1,13 +1,22 @@
 def document_analyzer():
-	words = []
-	with open('document.txt', 'r') as f:
+	file = open('document.txt','r')
+	word = ''
+	count = 0
+	list = []
 
-		for i in f:
-			words.extend(i.split())
+	for i  in file:
+		line = i.lower().replace(',','').replace(':','').replace(',','').replace(';','').replace('(','').replace(')','').split(' ')
 
-	from collections import Counter
+		for j in line:
+			list.append(j)
 
-	counts = Counter(words)
-	five = counts.most_common(5)
-	for i in five:
-		print(five, ': ', counts) 
+	for x in range(0, len(list)):
+		counts = 1
+		for y in range(x+1, len(list)):
+			if(list[x] == list[y]):
+				counts += 1
+		if counts > count:
+			count = counts
+			word = list[x]
+
+	print(f'{word}: {count}')
