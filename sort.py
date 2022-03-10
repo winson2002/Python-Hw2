@@ -9,7 +9,3 @@ def sort_list(list):
 			j+=1
 		i+=1
 	return(list)
-
-
-a = [10,9,8,7,6,5,4,3,2,1,11,32,30]
-print(sort_list(a))
