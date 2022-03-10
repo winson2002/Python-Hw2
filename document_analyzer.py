@@ -10,7 +10,7 @@ def document_analyzer():
 		for j in line:
 			list.append(j)
 
-	for x in range(0, len(list)):
+	for x in range(0, len(list)-1):
 		counts = 1
 		for y in range(x+1, len(list)):
 			if(list[x] == list[y]):
