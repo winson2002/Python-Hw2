@@ -1,22 +1,22 @@
 def document_analyzer():
 	file = open('document.txt','r')
-	word = ''
-	count = 0
-	list = []
+	dic = {}
 
-	for i  in file:
-		line = i.lower().replace(',','').replace(':','').replace(',','').replace(';','').replace('(','').replace(')','').split(' ')
+	for i in file:
+		paragraph = i.replace('\n',"").replace(',','').replace(':','').replace(',','').replace(';','').replace('(','').replace(')','').split(' ')
 
-		for j in line:
-			list.append(j)
+		for j in paragraph:
+			if j in  dic:
+				dic[j] += 1
+			else
+				dic[j] = 1
 
-	for x in range(0, len(list)-1):
-		counts = 1
-		for y in range(x+1, len(list)):
-			if(list[x] == list[y]):
-				counts += 1
-		if counts > count:
-			count = counts
-			word = list[x]
+	for y in range(5):
+		word = ''
+		for x in dic:
+			if word == '' or dic[x] > dic[word]:
+				word = x
+		print(f'{word}: {dic[word]}')
+		dic.pop(word)
 
-	print(f'{word}: {count}')
+	file.close()
