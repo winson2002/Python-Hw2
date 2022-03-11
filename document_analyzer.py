@@ -13,6 +13,8 @@ def document_analyzer():
 
 	for y in range(5):
 		word = ''
+		if len(dic) == 0:
+			return
 		for x in dic:
 			if word == '' or dic[x] > dic[word]:
 				word = x
