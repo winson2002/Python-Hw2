@@ -17,7 +17,7 @@ def document_analyzer():
 			if word == '' or dic[x] > dic[word]:
 				word = x
 			elif dic[x] == dic[word] and word > x:
-				word = xx
+				word = x
 		print(f'{word}: {dic[word]}')
 		dic.pop(word)
 
