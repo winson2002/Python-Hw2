@@ -20,7 +20,7 @@ def document_analyzer():
 				word = x
 			elif dic[x] == dic[word] and word > x:
 				word = x
-		print(f'{word}: {dic[word]}')
+		print(f' {word}: {dic[word]}')
 		dic.pop(word)
 
 	file.close()
