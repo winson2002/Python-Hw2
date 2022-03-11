@@ -10,7 +10,7 @@ def document_analyzer():
 				dic[j] += 1
 			else:
 				dic[j] = 1
-
+	print('\n')
 	for y in range(5):
 		word = ''
 		if len(dic) == 0:
@@ -20,8 +20,8 @@ def document_analyzer():
 				word = x
 			elif dic[x] == dic[word] and word > x:
 				word = x
-		print(f' {word}: {dic[word]}')
+		print(f'{word}: {dic[word]}')
 		dic.pop(word)
 
 	file.close()
-#document_analyzer()
+document_analyzer()
