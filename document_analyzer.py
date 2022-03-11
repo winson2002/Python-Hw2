@@ -8,7 +8,7 @@ def document_analyzer():
 		for j in paragraph:
 			if j in  dic:
 				dic[j] += 1
-			else
+			else:
 				dic[j] = 1
 
 	for y in range(5):
@@ -16,6 +16,8 @@ def document_analyzer():
 		for x in dic:
 			if word == '' or dic[x] > dic[word]:
 				word = x
+			elif dic[x] == dic[word] and word > x:
+				word = xx
 		print(f'{word}: {dic[word]}')
 		dic.pop(word)
 
