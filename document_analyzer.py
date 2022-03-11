@@ -3,14 +3,16 @@ def document_analyzer():
 	dic = {}
 
 	for i in file:
-		paragraph = i.lower().replace('\n',"").replace(',','').replace(':','').replace(',','').replace(';','').replace('(','').replace(')','').split(' ')
+		paragraph = i.replace('\n','').replace(',','').replace(':','').replace(',','').replace(';','').replace('(','').replace(')','').split(' ')
 
 		for j in paragraph:
+			if j ==  '':
+				continue
 			if j in  dic:
 				dic[j] += 1
 			else:
 				dic[j] = 1
-	print('\n')
+	print('')
 	for y in range(5):
 		word = ''
 		if len(dic) == 0:
