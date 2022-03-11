@@ -3,7 +3,7 @@ def document_analyzer():
 	dic = {}
 
 	for i in file:
-		paragraph = i.replace('\n',"").replace(',','').replace(':','').replace(',','').replace(';','').replace('(','').replace(')','').split(' ')
+		paragraph = i.lower().replace('\n',"").replace(',','').replace(':','').replace(',','').replace(';','').replace('(','').replace(')','').split(' ')
 
 		for j in paragraph:
 			if j in  dic:
@@ -24,3 +24,4 @@ def document_analyzer():
 		dic.pop(word)
 
 	file.close()
+#document_analyzer()
